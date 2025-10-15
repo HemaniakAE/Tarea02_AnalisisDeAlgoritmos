@@ -19,7 +19,10 @@
 .container {
   display: grid;
   grid-template-columns: 150px 1fr;
-  gap: 3em;
+  grid-template-rows: auto;
+  align-items: start;
+  gap: 0.8em;
+  padding: 0.5em;
   width: 1000px;
   height: 500px;
   background-color: #ffffff;
@@ -28,9 +31,9 @@
 }
 
 .input-limite {
-  margin-left: 0.5em;
-  margin-top: 0.5em;
-  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  
   height: 40px;
   padding: 0.2em 1em;
   font-size: 0.8em;
@@ -44,12 +47,28 @@
   color: #00000090;
 }
 
+.conjunto-wrapper {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em; 
+  
+}
+
+.conjunto-label {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: black;
+  white-space: nowrap; /* evita que se divida en líneas */
+}
+
 .conjunto-container {
-  margin-left: 0.5em;
-  margin-top: 0.5em;
+  flex: 1;
+  display: flex;
+  align-items: center;
   text-align: left;
-  line-height: 3em;
-  width: 95%;
   height: 40px;
   padding: 0.2em 1em;
   font-size: 0.8em;

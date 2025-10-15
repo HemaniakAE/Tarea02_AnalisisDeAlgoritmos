@@ -7,11 +7,11 @@ function Container() {
             placeholder="Ingrese el valor límite L"
             className="input-limite"
             />
-            <div className="conjunto-container">
-                {conjunto.length > 0 /*Si el conjunto está vacío muestar un mensaje*/
-                    ? `Conjunto: ${JSON.stringify(conjunto)}`
-                    : 'Conjunto: Sin generar'
-                }
+            <div className="conjunto-wrapper">
+                <label className="conjunto-label">Conjunto: </label>
+                <div className="conjunto-container">
+                    {conjunto.length > 0 ? JSON.stringify(conjunto) : '-'}
+                </div>    
             </div>
         </div>
     )
