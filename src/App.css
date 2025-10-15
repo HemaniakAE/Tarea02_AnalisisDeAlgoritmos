@@ -18,6 +18,8 @@
 
 .container {
   display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 3em;
   width: 1000px;
   height: 500px;
   background-color: #ffffff;
@@ -28,7 +30,7 @@
 .input-limite {
   margin-left: 0.5em;
   margin-top: 0.5em;
-  width: 150px;
+  width: 100%;
   height: 40px;
   padding: 0.2em 1em;
   font-size: 0.8em;
@@ -40,6 +42,21 @@
 
 .input-limite::placeholder {
   color: #00000090;
+}
+
+.conjunto-container {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  text-align: left;
+  line-height: 3em;
+  width: 95%;
+  height: 40px;
+  padding: 0.2em 1em;
+  font-size: 0.8em;
+  color:black;
+  background-color: #ffffff;
+  border: 1px solid #333;
+  border-radius: 5px;
 }
 
 .card {
