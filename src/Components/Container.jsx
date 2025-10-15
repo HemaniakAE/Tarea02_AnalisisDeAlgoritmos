@@ -13,6 +13,12 @@ function Container() {
                     {conjunto.length > 0 ? JSON.stringify(conjunto) : '-'}
                 </div>    
             </div>
+            <div className="evo-wrapper">
+                <label className="evo-label">Evolución de conjuntos:</label>
+                <div className="evo-container">
+                {/*Se supone que aquí irán los conjuntos evolucionando*/}    
+                </div>
+            </div>
         </div>
     )
 }
