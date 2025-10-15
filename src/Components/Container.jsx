@@ -1,6 +1,5 @@
 function Container() {
     const conjunto = [1,2,3,4,5,6];
-
     return (
         <div className="container">
             <input 
@@ -9,7 +8,10 @@ function Container() {
             className="input-limite"
             />
             <div className="conjunto-container">
-                Conjunto: {JSON.stringify(conjunto)}
+                {conjunto.length > 0 /*Si el conjunto está vacío muestar un mensaje*/
+                    ? `Conjunto: ${JSON.stringify(conjunto)}`
+                    : 'Conjunto: Sin generar'
+                }
             </div>
         </div>
     )
