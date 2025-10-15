@@ -119,7 +119,7 @@
 .evo-container {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: left;
   text-align: left;
   height: 40px;
   padding: 0.2em 1em;
@@ -129,8 +129,14 @@
   border: 1px solid #333;
   border-radius: 5px;
   overflow-x: auto;      
-  overflow-y: hidden;    
+  overflow-y: auto;    
   white-space: nowrap; 
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.evo-container div {
+  white-space: nowrap;
 }
 
 .card {
