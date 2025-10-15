@@ -1,7 +1,11 @@
 function Container() {
     return (
         <div className="container">
-            {/* Elementos del contenedor */}
+            <input 
+            typer="number"
+            placeholder="Ingrese el valor límite L"
+            className="input-limite"
+            />
         </div>
     )
 }

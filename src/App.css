@@ -25,6 +25,23 @@
   border-radius: 10px;
 }
 
+.input-limite {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  width: 150px;
+  height: 40px;
+  padding: 0.2em 1em;
+  font-size: 0.8em;
+  color:black;
+  background-color: #ffffff;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.input-limite::placeholder {
+  color: #00000090;
+}
+
 .card {
   padding: 2em;
 }
