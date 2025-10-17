@@ -1,35 +1,86 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [limit, setLimit] = useState(""); // limite
+  const [numbers, setNumbers] = useState([]); // num rand
+  const [population, setPopulation] = useState([]); // poblacion
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+  const generarNumeros = () => {
+    const nuevos = Array.from(
+      { length: 10 },
+      () => Math.floor(Math.random() * 50) + 1
+    );
+    setNumbers(nuevos);
+  };
+
+  const generarPoblacionInicial = () => {
+    if (numbers.length === 0) {
+      alert("Primero genera el conjunto de números.");
+      return;
+    }
+
+    let nuevaPoblacion = [];
+    for (let i = 0; i < 10; i++) {
+      let individuo = [];
+      numbers.forEach((num) => {
+        if (Math.random() > 0.5) {
+          individuo.push(num);
+        }
+      });
+      nuevaPoblacion.push(individuo);
+    }
+    setPopulation(nuevaPoblacion);
+  };
+
+  const calcularFitness = (individuo) => {
+    let suma = 0;
+    individuo.forEach(num => suma += num);
+    return suma;
+  };
+  //----------------------------------------------------------Parte de interfaz----------------------------------------------------------
+return (
+  <div className="app-container">
+    <h1>🎮 Algoritmo Genético - Problema de la Mochila</h1>
+
+    <input
+      type="number"
+      placeholder="Ingrese el imite"
+      value={limit}
+      onChange={(e) => setLimit(e.target.value)}
+    />
+
+    <button onClick={generarNumeros}>Generar Conjunto</button>
+
+    {numbers.length > 0 && (
+      <div className="generated-box">
+        <h3>Conjunto generado:</h3>
+        <p>[{numbers.join(", ")}]</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+    )}
+
+    <button onClick={generarPoblacionInicial} style={{ marginTop: "15px" }}>
+      Generar Población Inicial (10 individuos)
+    </button>
+
+    {population.length > 0 && (
+      <div className="generated-box">
+        <h3>Población Inicial:</h3>
+        {population.map((individuo, index) => {
+          const suma = calcularFitness(individuo);
+          const excede = parseInt(suma) > parseInt(limit);
+
+          return (
+            <p key={index}>
+              <strong>Individuo {index + 1}:</strong> [{individuo.join(", ")}] → Suma:{" "}
+              {suma} {excede ? "❌" : "✅"}
+            </p>
+          );
+        })}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    )}
+  </div>
+);
 }
 
-export default App
+export default App;
