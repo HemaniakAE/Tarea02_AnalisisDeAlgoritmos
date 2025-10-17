@@ -56,11 +56,27 @@
   gap: 0.5em; 
 }
 
-.conjunto-label {
+.conjunto-button {
   font-size: 0.9em;
   font-weight: bold;
+  height: 45px;
   color: rgb(255, 255, 255);
+  background-color: #242424;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
   white-space: nowrap; 
+  transition: transform 0.2s ease;
+}
+
+.conjunto-button:hover {
+  background-color: #72707090;
+  cursor: pointer;
+}
+
+.conjunto-button:active {
+  background-color: #ffffff;
+  color: #242424;
+  transform: scale3d(0.95);
 }
 
 .conjunto-container {
@@ -170,8 +186,10 @@
     background-color: #ffffff;
     border: 2px solid #ffffff; 
   }
-  .conjunto-label {
-    color: black;
+  .conjunto-button {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border: 2px solid #242424;
   }
   .conjunto-container {
     color:#ffffff;

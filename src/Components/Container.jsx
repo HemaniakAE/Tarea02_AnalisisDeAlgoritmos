@@ -43,7 +43,7 @@ function Container() {
             className="input-limite"
             />
             <div className="conjunto-wrapper">
-                <label className="conjunto-label">Conjunto: </label>
+                <button className="conjunto-button">Generar conjunto </button>
                 <div className="conjunto-container">
                     {conjunto.length > 0 ? JSON.stringify(conjunto) : '-'}
                 </div>    
