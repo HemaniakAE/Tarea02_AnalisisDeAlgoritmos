@@ -9,6 +9,12 @@ body {
   min-height: 100vh;
 }
 
+.header {
+  margin-left: 4em;
+  align-items: center;
+  background-color: transparent;
+}
+
 .app-container {
   width: 650px;
   padding: 40px;
