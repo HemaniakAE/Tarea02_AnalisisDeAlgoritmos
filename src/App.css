@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #0a0a0a, #161616);
+  background: linear-gradient(135deg, #000000, #161616);
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -10,9 +10,43 @@ body {
 }
 
 .header {
-  margin-left: 4em;
+  background: transparent;
+  padding: 20px ;
+  position: relative;
+  display: flex;
   align-items: center;
-  background-color: transparent;
+  justify-content: center;
+}
+
+.reset-button {
+  position: absolute;
+  left: 50px;
+  top: 10%;
+  width: 100px;
+  height: 100px;
+  transform: translateY(-50%);
+  padding: 8px;
+  background: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.reset-button img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(4977%) hue-rotate(201deg) brightness(101%) contrast(101%);
 }
 
 .app-container {

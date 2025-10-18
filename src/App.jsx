@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Header from './components/Header.jsx'
 import Container from './components/Container.jsx'
+import ResetButton from './components/ResetButton.jsx'
 import { generarNumerosAleatorios, ejecutarAlgoritmoGenetico } from './logic/genAlgorithm.js'
 
 
@@ -37,10 +38,20 @@ function App() {
     }
   };
 
+  // Función para resetear página
+  const resetearTodo = () => {
+    setLimit("");
+    setNumbers([]);
+    setInitialPop([]);
+    setBestSolution([]);
+    setBestSum(null);
+    setBestGen(null);
+  };
+
   return (
     <div className='App'>
       <Header />
-      {
+      <ResetButton onReset={resetearTodo} />
       <div className='card'>
         <Container 
           limit={limit}
@@ -54,7 +65,6 @@ function App() {
           bestGen={bestGen}
         />
       </div>
-      }
     </div>
   )
 }
