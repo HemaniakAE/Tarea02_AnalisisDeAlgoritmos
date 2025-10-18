@@ -1,3 +1,26 @@
+/**
+ * @file Container.jsx
+ * @description Componente que maneja la interfaz principal de interacción con el algoritmo genético.
+ * Permite ingresar un límite, generar un conjunto de números aleatorios, ejecutar el algoritmo y
+ * mostrar la población inicial, mejor solución y estadísticas del proceso.
+ *
+ * Componente Container.
+ *
+ * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {string} props.limit - Límite ingresado por el usuario para para maximizar
+ * @param {Function} props.setLimit - Función para actualizar el valor del límite.
+ * @param {number[]} props.numbers - Conjunto de números aleatorios generados.
+ * @param {Function} props.generarNumeros - Función que genera un nuevo conjunto de números aleatorios.
+ * @param {Function} props.ejecutarAlgoritmo - Función que ejecuta el algoritmo genético con los datos actuales.
+ * @param {Array[]} props.initialPop - Población inicial generada por el algoritmo genético.
+ * @param {Array} props.bestSolution - Mejor subconjunto encontrado por el algoritmo.
+ * @param {number|null} props.bestSum - Suma asociada al mejor subconjunto.
+ * @param {number|null} props.bestGen - Generación en la que se encontró la mejor solución.
+ * @returns {JSX.Element} Interfaz completa que incluye inputs, botones y visualización de resultados.
+ */
+
+
 function Container({ 
   limit, 
   setLimit, 
