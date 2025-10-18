@@ -1,17 +1,9 @@
 function Header() {
-    return (
-        <header className="header">
-            <h1>
-                Maximizador de conjuntos{' '}
-                <img 
-                src="/icono conjunto.png" 
-                alt="Conjunto logo" 
-                className="header-logo"
-                style={{ height: "1.4em",verticalAlign: "middle"}} 
-                />
-            </h1>
-        </header>
-    );
+  return (
+    <div className="header">
+      <h1>Algoritmo Genético - Problema de la Mochila</h1>
+    </div>
+  );
 }
 
 export default Header;
