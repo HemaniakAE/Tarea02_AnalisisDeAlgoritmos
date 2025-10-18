@@ -49,22 +49,4 @@ header h1 {
   filter: invert(1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  .header {
-    color: #000000;
-    background: #ffffff;
-  }
-  .header h1 {           
-    color: #000000;
-  }
-  .header-logo {
-    filter: invert(0);
-  }
-}
+
